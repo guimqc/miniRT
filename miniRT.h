@@ -17,25 +17,6 @@
 # include <mlx.h>
 # include <stdio.h>
 
-typedef struct Ambient
-{
-	int		color_rgb[3];
-	double	ratio;
-}	t_ambient;
-
-typedef struct Light
-{
-	double	coordinate[3];
-	double	brightness;
-}	t_light;
-
-typedef struct Camera
-{
-	int		FOV;
-	double	coordinate[3];
-	double	orientation[3];
-}	t_camera;
-
 typedef struct Plane
 {
 	int		color_rgb[3];
@@ -58,6 +39,26 @@ typedef struct Cylinder
 	double	diameter;
 	double	height;
 }	t_Cylinder;
+
+typedef struct Ambient
+{
+	int		color_rgb[3];
+	double	ratio;
+}	t_ambient;
+
+typedef struct Light
+{
+	double	coordinate[3];
+	double	brightness;
+}	t_light;
+
+typedef struct Camera
+{
+	int		FOV;
+	double	coordinate[3];
+	double	orientation[3];
+}	t_camera;
+
 
 
 typedef struct Display
