@@ -65,18 +65,25 @@ typedef struct Display
 {
 	void	*mlx;
 	void	*mlx_win;
+	int		width;
+	int		height;
 }	t_display;
 
 typedef struct MiniRT
 {
 	t_display	display;
+	t_light		light;
+	t_camera	camera;
+	t_ambient	ambient;
 }	t_miniRT;
+
+// init
+void	init(t_miniRT *miniRT);
 
 // display
 void	create_window(t_miniRT *miniRT);
 
 // hook
-int		key_hook(int keycode);
-int		close_x(t_miniRT *miniRT);
+void	hook(t_miniRT *miniRT);
 
 #endif

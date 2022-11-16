@@ -1,4 +1,4 @@
-SRCS = main.c src/hook.c src/display.c \
+SRCS = main.c src/init.c src/hook.c src/display.c \
 
 OBJ = $(SRCS:%c=%o)
 
@@ -6,7 +6,7 @@ NAME = miniRT
 
 CC = gcc
 
-CFLAGS =  -Wall -Werror -Wextra -c
+# CFLAGS =  -Wall -Werror -Wextra -c	
 
 RM = rm -f
 
@@ -26,7 +26,7 @@ $(NAME): $(OBJ)
 	$(CC) $(OBJ) $(LIB) $(LIBX) -framework OpenGL -framework AppKit -o $(NAME)
 
 clean:
-	cd lib/libft && make clean -s
+#	cd lib/libft && make clean -s
 	$(RM) $(OBJ)
 
 fclean: clean

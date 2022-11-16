@@ -14,12 +14,9 @@
 
 int	main(int argc, char *argv[])
 {
-	(void)	argc;
-	(void)	argv;
 	t_miniRT	miniRT;
 
+	init(&miniRT);
 	create_window(&miniRT);
-	mlx_key_hook(miniRT.display.mlx_win, key_hook, &miniRT);
-	mlx_hook(miniRT.display.mlx_win, 17, 0, close_x, &miniRT);
-	mlx_loop(miniRT.display.mlx);
+	hook(&miniRT);
 }
