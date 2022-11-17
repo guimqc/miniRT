@@ -14,5 +14,5 @@
 
 void	init(t_miniRT *miniRT)
 {
-
+	
 }

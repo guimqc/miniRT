@@ -15,7 +15,6 @@
 
 # include "lib/libft/libft.h"
 # include <mlx.h>
-# include <stdio.h>
 
 typedef struct Plane
 {
@@ -67,7 +66,13 @@ typedef struct Display
 	void	*mlx_win;
 	int		width;
 	int		height;
+	void	*img;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+	char	*addr;
 }	t_display;
+
 
 typedef struct MiniRT
 {
