@@ -71,12 +71,7 @@ typedef struct Display
 	char	*addr;
 }	t_display;
 
-<<<<<<< HEAD
-
-typedef struct MiniRT
-=======
 typedef struct s_minirt
->>>>>>> parsing
 {
 	t_display	display;
 	t_light		light;
