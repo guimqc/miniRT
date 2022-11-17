@@ -1,4 +1,8 @@
-SRCS = main.c src/init.c src/hook.c src/display.c \
+SRCS = main.c				\
+		src/init.c			\
+		src/hook.c			\
+		src/display.c		\
+		src/parse_mapfile.c	\
 
 OBJ = $(SRCS:%c=%o)
 
@@ -6,7 +10,7 @@ NAME = miniRT
 
 CC = gcc
 
-# CFLAGS =  -Wall -Werror -Wextra -c	
+CFLAGS = -Wall -Werror -Wextra
 
 RM = rm -f
 
@@ -23,7 +27,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	$(MAKELIB)
 	$(MAKELIBX)
-	$(CC) $(OBJ) $(LIB) $(LIBX) -framework OpenGL -framework AppKit -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJ) $(LIB) $(LIBX) -framework OpenGL -framework AppKit -o $(NAME)
 
 clean:
 #	cd lib/libft && make clean -s

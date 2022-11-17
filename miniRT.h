@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   miniRT.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gvial <marvin@42quebec.com>                +#+  +:+       +#+        */
+/*   By: mjarry <mjarry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 16:49:50 by gvial             #+#    #+#             */
-/*   Updated: 2022/05/25 16:49:55 by gvial            ###   ########.fr       */
+/*   Updated: 2022/11/17 16:49:40 by mjarry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct Cylinder
 	double	orientation[3];
 	double	diameter;
 	double	height;
-}	t_Cylinder;
+}	t_cylinder;
 
 typedef struct Ambient
 {
@@ -53,12 +53,10 @@ typedef struct Light
 
 typedef struct Camera
 {
-	int		FOV;
+	int		fov;
 	double	coordinate[3];
 	double	orientation[3];
 }	t_camera;
-
-
 
 typedef struct Display
 {
@@ -73,14 +71,25 @@ typedef struct Display
 	char	*addr;
 }	t_display;
 
+<<<<<<< HEAD
 
 typedef struct MiniRT
+=======
+typedef struct s_minirt
+>>>>>>> parsing
 {
 	t_display	display;
 	t_light		light;
 	t_camera	camera;
 	t_ambient	ambient;
-}	t_miniRT;
+	t_cylinder	*cylinder;
+	t_sphere	*sphere;
+	t_plane		*plane;
+}			t_miniRT;
+
+//parse_mapfile.c
+int	valid_name(char *str);
+int	parse_mapfile(char *str);
 
 // init
 void	init(t_miniRT *miniRT);
