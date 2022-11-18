@@ -16,21 +16,21 @@
 # include "lib/libft/libft.h"
 # include <mlx.h>
 
-typedef struct Plane
+typedef struct s_plane
 {
 	int		color_rgb[3];
 	double	coordinate[3];
 	double	orientation[3];
 }	t_plane;
 
-typedef struct Sphere
+typedef struct s_sphere
 {
 	int		color_rgb[3];
 	double	coordinate[3];
 	double	diameter;
 }	t_sphere;
 
-typedef struct Cylinder
+typedef struct s_cylinder
 {
 	int		color_rgb[3];
 	double	coordinate[3];
@@ -39,26 +39,26 @@ typedef struct Cylinder
 	double	height;
 }	t_cylinder;
 
-typedef struct Ambient
+typedef struct s_ambient
 {
 	int		color_rgb[3];
 	double	ratio;
 }	t_ambient;
 
-typedef struct Light
+typedef struct s_light
 {
 	double	coordinate[3];
 	double	brightness;
 }	t_light;
 
-typedef struct Camera
+typedef struct s_camera
 {
 	int		fov;
 	double	coordinate[3];
 	double	orientation[3];
 }	t_camera;
 
-typedef struct Display
+typedef struct s_display
 {
 	void	*mlx;
 	void	*mlx_win;
