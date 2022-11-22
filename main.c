@@ -14,7 +14,7 @@
 
 int	main(int argc, char *argv[])
 {
-	// t_miniRT	miniRT;
+	t_miniRT	miniRT;
 	
 	if (argc == 2)
 	{
@@ -23,8 +23,8 @@ int	main(int argc, char *argv[])
 		if (!parse_mapfile(argv[1]))
 			return (0);
 		// init(&miniRT);
-		// create_window(&miniRT);
-		// hook(&miniRT);
+		create_window(&miniRT);
+		hook(&miniRT);
 		return (0);
 	}
 	printf("Error: invalid number of arguments\n");
