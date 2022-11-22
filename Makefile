@@ -3,6 +3,7 @@ SRCS = main.c				\
 		src/hook.c			\
 		src/display.c		\
 		src/parse_mapfile.c	\
+		src/parse_utils.c	\
 
 OBJ = $(SRCS:%c=%o)
 

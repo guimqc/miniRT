@@ -6,7 +6,7 @@
 /*   By: mjarry <mjarry@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 16:49:50 by gvial             #+#    #+#             */
-/*   Updated: 2022/11/17 16:49:40 by mjarry           ###   ########.fr       */
+/*   Updated: 2022/11/22 15:04:01 by mjarry           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,8 +67,15 @@ typedef struct s_minirt
 }			t_miniRT;
 
 //parse_mapfile.c
-int	valid_name(char *str);
-int	parse_mapfile(char *str);
+int		valid_name(char *str);
+int		elem_names(char **elems);
+char	**parse_contents(char *file1);
+char	**parse_mapfile(char *str);
+
+//parse_utils.c
+char	**error_message(char *str, char *strfree);
+int		check_file_size(int fd, char *file);
+void	free2d(char **split);
 
 // init
 void	init(t_miniRT *miniRT);
