@@ -15,14 +15,15 @@
 int	main(int argc, char *argv[])
 {
 	t_miniRT	miniRT;
+	(void)	argv;
 	
 	if (argc == 2)
 	{
-		if (!valid_name(argv[1]))
-			return (0);
-		if (!parse_mapfile(argv[1]))
-			return (0);
-		// init(&miniRT);
+		// if (!valid_name(argv[1]))
+		// 	return (0);
+		// if (!parse_mapfile(argv[1]))
+		// 	return (0);
+		init(&miniRT);
 		create_window(&miniRT);
 		hook(&miniRT);
 		return (0);

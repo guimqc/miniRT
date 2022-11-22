@@ -14,6 +14,7 @@
 # define MINIRT_H
 
 # include "lib/libft/libft.h"
+# include <math.h>
 # include <mlx.h>
 
 typedef struct s_obj
