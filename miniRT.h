@@ -16,49 +16,35 @@
 # include "lib/libft/libft.h"
 # include <mlx.h>
 
-typedef struct Plane
-{
-	int		color_rgb[3];
-	double	coordinate[3];
-	double	orientation[3];
-}	t_plane;
-
-typedef struct Sphere
-{
-	int		color_rgb[3];
-	double	coordinate[3];
-	double	diameter;
-}	t_sphere;
-
-typedef struct Cylinder
+typedef struct s_obj
 {
 	int		color_rgb[3];
 	double	coordinate[3];
 	double	orientation[3];
 	double	diameter;
 	double	height;
-}	t_cylinder;
+}	t_obj;
 
-typedef struct Ambient
+typedef struct s_ambient
 {
 	int		color_rgb[3];
 	double	ratio;
 }	t_ambient;
 
-typedef struct Light
+typedef struct s_light
 {
 	double	coordinate[3];
 	double	brightness;
 }	t_light;
 
-typedef struct Camera
+typedef struct s_camera
 {
 	int		fov;
 	double	coordinate[3];
 	double	orientation[3];
 }	t_camera;
 
-typedef struct Display
+typedef struct s_display
 {
 	void	*mlx;
 	void	*mlx_win;
@@ -77,9 +63,7 @@ typedef struct s_minirt
 	t_light		light;
 	t_camera	camera;
 	t_ambient	ambient;
-	t_cylinder	*cylinder;
-	t_sphere	*sphere;
-	t_plane		*plane;
+	t_obj		*obj;
 }			t_miniRT;
 
 //parse_mapfile.c
