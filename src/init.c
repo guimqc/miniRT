@@ -15,5 +15,5 @@
 void	init(t_miniRT *miniRT)
 {
 	miniRT->display.width = 800;
-	miniRT->display.height = 600;
+	miniRT->display.height = 800;
 }

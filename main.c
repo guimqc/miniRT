@@ -14,19 +14,20 @@
 
 int	main(int argc, char *argv[])
 {
-	// t_miniRT	miniRT;
-	char **elements;
+	(void) argv;
+	t_miniRT	miniRT;
+	// char **elements;
 	
 	if (argc == 2)
 	{
-		if (!valid_name(argv[1]))
-			return (0);
-		elements = parse_mapfile(argv[1]);
-		if (!elements)
-			return (0);
-		// init(&miniRT, elements);
-		// create_window(&miniRT);
-		// hook(&miniRT);
+		// if (!valid_name(argv[1]))
+		// 	return (0);
+		// elements = parse_mapfile(argv[1]);
+		// if (!elements)
+		// 	return (0);
+		init(&miniRT);
+		create_window(&miniRT);
+		hook(&miniRT);
 		return (0);
 	}
 	printf("Error: invalid number of arguments\n");

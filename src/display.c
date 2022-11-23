@@ -26,7 +26,7 @@ void	my_mlx_pixel_put(t_miniRT *minirt, int x, int y, int color)
 	*(unsigned int*)dst = color;
 }
 
-void	draw_circle(t_miniRT *miniRT, int c_y, int c_x, double d, int rgb[3])
+void	draw_circle(t_miniRT *miniRT, int _x, int _y, double d, int rgb[3])
 {
 	int		x;
 	int		y;
@@ -38,10 +38,21 @@ void	draw_circle(t_miniRT *miniRT, int c_y, int c_x, double d, int rgb[3])
 	while (++y < miniRT->display.height)
 	{
 		while (++x < miniRT->display.width)
-			if (pow(x - c_x, 2) + pow(y - c_y, 2) < pow(r, 2))
+			if (pow(y - _y, 2) + pow(x - _x, 2) < pow(r, 2))
 				my_mlx_pixel_put(miniRT, x, y, create_trgb(1, rgb[0], rgb[1], rgb[2]));
 		x = -1;
 	}
+}
+
+void	draw_test_scene(t_miniRT *miniRT)
+{
+	int	rgb[3] = {100, 175, 3};
+	int	rgb2[3] = {0, 56, 230};
+
+	draw_circle(miniRT, 400, -3400, 7000, rgb); // top
+	draw_circle(miniRT, 400, 4200, 7000, rgb); // bottom
+	draw_circle(miniRT, 4200, 400, 7000, rgb2); // right
+	draw_circle(miniRT, 400, 400, 100, rgb2); // circle
 }
 
 void		create_window(t_miniRT *miniRT)
@@ -54,12 +65,7 @@ void		create_window(t_miniRT *miniRT)
 	miniRT->display.addr = mlx_get_data_addr(miniRT->display.img, \
 		&miniRT->display.bits_per_pixel, &miniRT->display.line_length, \
 		&miniRT->display.endian);
-	int	rgb[3] = {255, 56, 3};
-	draw_circle(miniRT, 200, 200, 100, rgb);
-	rgb[0] = 0;
-	rgb[1] = 34;
-	rgb[2] = 66;
-	draw_circle(miniRT, 250, 200, 100, rgb);
+	draw_test_scene(miniRT);
 	mlx_put_image_to_window(miniRT->display.mlx, miniRT->display.mlx_win, \
 		miniRT->display.img, 0, 0);
 }
